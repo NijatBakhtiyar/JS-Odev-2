@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --dark: #374151;
+  --darker: #1f2937;
+  --darkest: #111827;
+  --gray: #6b7280;
+  --light: #eee;
+  --pink: #ec4899;
+  --purple: #8b5cf6;
+  --white: #fff;
+  --red: crimson;
+}
+
+* {
+  font-family: "Fira Sans", sans-serif;
+  color: var(--white);
+}
+
+body {
+  background: var(--dark);
+}
+
+header {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+#new-task-form {
+  display: flex;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#new-task-input {
+  flex: 1 1 0%;
+  background: var(--darker);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: var(--light);
+  font-size: 1.25rem;
+}
+
+#new-task-input::placeholder {
+  color: var(--gray);
+}
+
+#new-task-submit {
+  /* color: var(--pink); */
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.4s;
+  background: -webkit-linear-gradient(var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#new-task-submit:hover {
+  opacity: 0.8;
+}
+
+#new-task-submit:active {
+  opacity: 0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.task-list {
+  padding: 1rem;
+}
+
+.task-list h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background: var(--darkest);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+#tasks .task .content.newstyle .text {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+#tasks .task .content {
+  flex: 1 1 0%;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+
+#tasks .task .content .input_checked {
+  border: 1px solid gray;
+  display: inline-block;
+  width: 30px;
+  height: 27px;
+  z-index: 2342434;
+  background: grey;
+  border-radius: 50%;
+  position: relative;
+  opacity: 0;
+  transition: 0.4s;
+}
+#tasks .task .content.newstyle .input_checked {
+  opacity: 1;
+}
+
+#tasks .task .content .input_checked:after {
+  content: "";
+  position: absolute;
+  border: 1px solid green;
+  border-width: 0 3px 3px 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 8px;
+  height: 15px;
+}
+
+#tasks .task .content .text {
+  color: var(--light);
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+#tasks .task .content .text:not(:read-only) {
+  color: var(--pink);
+}
+
+#tasks .task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.task .actions:hover {
+  opacity: 0.8;
+}
+
+.task .actions:active {
+  opacity: 0.6;
+}
+
+.task .actions .edit {
+  background: -webkit-linear-gradient(var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+  color: var(--red);
+}
+
+.added, .empty{
+    position: absolute;
+    width: 700px;
+    transform: translateX(50%);
+    right: 50%;
+    top: 50px;
+    display: inline-block;
+    padding: 5px 50px;
+    background: green;
+    color: #fff; 
+    font-weight: bold;
+    opacity: 0;
+    transition: .5s;
+}
+
+.empty{
+    background: crimson;
+}

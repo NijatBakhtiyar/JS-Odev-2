@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Todo List</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<header>
+		<h1>Yapılacaklar Listesi</h1>
+		<form id="new-task-form">
+			<input type="text" id="new-task-input" placeholder="Bugün ne yapacaksın?" />
+        <input type="submit" 
+          id="new-task-submit"
+          value="Ekle"
+        />
+      </form>
+    </header>
+
+    <main>
+     <section class="task-list">
+       <h2>Yapılacaklar</h2>
+       <div id="tasks">
+       </div>
+     </section>
+    </main>
+
+    <div class="added">
+        <p>Listeye Eklendi</p>
+    </div>
+
+    <div class="empty">
+        <p>Boş Eklenemez</p>
+    </div>
+  
+    <script src="index.js"></script>
+  </body>
+</html>
